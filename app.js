@@ -19,11 +19,7 @@ var express = require("express"),
 
 //mongoose.connect("mongodb://localhost/yelp_camp");
 
-mongoose.connect("mongodb+srv://pineappleiitian:moongoosepassword@cluster0-qvm9l.mongodb.net/cluster0?retryWrites=true&w=majority").then(()=>{
-	console.log("connected to DB")
-}).catch((e)=>{
-	console.log('error',e)
-})
+mongoose.connect("mongodb+srv://pineappleiitian:moongoosepassword@cluster0-qvm9l.mongodb.net/cluster0?retryWrites=true&w=majority")
 app.use(bodyParser.urlencoded({extended : true}));
 app.set("view engine","ejs");
 app.use(express.static(__dirname + "/public"));

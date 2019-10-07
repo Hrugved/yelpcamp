@@ -17,7 +17,10 @@ var express = require("express"),
 
 // seedDB();
 
-//mongoose.connect("mongodb://localhost/yelp_camp");
+// mongoose.connect("mongodb://localhost/yelp_camp",{
+// 	useNewUrlParser: true,
+//     useCreateIndex: true
+// });
 
 mongoose.connect("mongodb+srv://pineappleiitian:moongoosepassword@cluster0-qvm9l.mongodb.net/cluster0?retryWrites=true&w=majority");
 
@@ -54,7 +57,7 @@ app.use(indexRoutes);
 app.use("/campgrounds",campgroundRoutes);
 app.use("/campgrounds/:id/comments",commentRoutes);
 
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 3000;
 app.listen(port,process.env.IP,()=>{
 	console.log("YelpCamp is up and running!");
 });
